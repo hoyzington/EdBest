@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
   root 'pages#home'
   get 'about', to: 'pages#about'
 
@@ -13,7 +16,7 @@ Rails.application.routes.draw do
     resources :courses, except: [:show]
   end
 
-  resources :courses, only: [:show] do
+  resources :courses, only: [:show, :index] do
     resources :experts, only: [:index]
     resources :newbies, only: [:index]
   end
