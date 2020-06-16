@@ -1,0 +1,2 @@
+class NewbiesController < ApplicationController
+end
