@@ -1,5 +1,7 @@
 <h1>Log In</h1>
 <%= form_with scope: :session, url: login_path, class: "" do |f| %>
+  <%= f.check_box :expert %>
+  (Check box if logging in as an EdBest Expert)
   <%= f.label :email %>
   <%= f.email_field :email %>
   <%= f.label :password %>

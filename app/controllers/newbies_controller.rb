@@ -18,7 +18,7 @@ class NewbiesController < ApplicationController
     # byebug
     @newbie = Newbie.new(newbie_params)
     if @newbie.save
-      # session[:id] = @newbie.id
+      session[:id] = @newbie.id
       # flash[:notice] = "Welcome to EdBest, #{@newbie.first_name}!"
       redirect_to newby_path(@newbie)
     else
@@ -40,8 +40,8 @@ class NewbiesController < ApplicationController
 
   def destroy
     @newbie.destroy
-    # session[:user_id] = nil if @newbie == current_user
-    flash[:notice] = 'Account, courses, and all related data have been destroyed'
+    session[:user_id] = nil if @newbie == current_newbie
+    # flash[:notice] = 'Account, courses, and all related data have been destroyed'
     redirect_to root_path
   end
 

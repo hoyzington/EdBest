@@ -17,7 +17,7 @@ class ExpertsController < ApplicationController
   def create
     @expert = Expert.new(expert_params)
     if @expert.save
-      # session[:id] = @expert.id
+      session[:id] = @expert.id
       # flash[:notice] = 'Congratulations! You have been accepted as an EdBest Expert.'
       redirect_to @expert
     else
@@ -39,8 +39,8 @@ class ExpertsController < ApplicationController
 
   def destroy
     @expert.destroy
-    # session[:user_id] = nil if @user == current_user
-    flash[:notice] = 'Account, courses, and all related data have been destroyed'
+    session[:user_id] = nil if @expert == current_expert
+    #flash[:notice] = 'Account, courses, and all related data have been destroyed'
     redirect_to root_path
   end
 
