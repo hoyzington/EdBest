@@ -22,9 +22,7 @@ Rails.application.routes.draw do
   end
 
   get 'signup', to: 'newbies#new'
-  post 'signup', to: 'newbies#create'
-  resources :newbies, except: [:new, :create, :index]
+  #post 'signup', to: 'newbies#create'
+  resources :newbies, except: [:new, :index]
   
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
 end
