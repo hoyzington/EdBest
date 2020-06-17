@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   get 'apply', to: 'experts#new'
-  post 'apply', to: 'experts#create'
-  resources :experts, except: [:new, :create] do
+  #post 'apply', to: 'experts#create'
+  resources :experts do
     resources :courses, except: [:show]
   end
 

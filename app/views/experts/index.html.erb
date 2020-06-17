@@ -1,2 +1,5 @@
-<h1>Experts#index</h1>
-<p>Find me in app/views/experts/index.html.erb</p>
+<h1>Check Out Our Awesome Experts!</h1>
+<% @experts.each do |expert| %>
+  <h2><%= link_to expert.full_name expert_path(expert) %></h2>
+  <p><%= expert.bio %></p>
+<% end %>
