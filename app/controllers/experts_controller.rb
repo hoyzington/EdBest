@@ -17,7 +17,7 @@ class ExpertsController < ApplicationController
   def create
     @expert = Expert.new(expert_params)
     if @expert.save
-      session[:id] = @expert.id
+      session[:user_id] = @expert.id
       # flash[:notice] = 'Congratulations! You have been accepted as an EdBest Expert.'
       redirect_to @expert
     else

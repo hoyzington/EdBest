@@ -18,7 +18,7 @@ class NewbiesController < ApplicationController
     # byebug
     @newbie = Newbie.new(newbie_params)
     if @newbie.save
-      session[:id] = @newbie.id
+      session[:user_id] = @newbie.id
       # flash[:notice] = "Welcome to EdBest, #{@newbie.first_name}!"
       redirect_to newby_path(@newbie)
     else
