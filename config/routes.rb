@@ -10,15 +10,15 @@ Rails.application.routes.draw do
   get 'apply', to: 'experts#new'
   #post 'apply', to: 'experts#create'
   resources :experts do
-    resources :offered_courses, except: [:show]
+    resources :offered_courses
   end
 
-  resources :offered_courses, only: [:show, :index] do
-    resources :experts, only: [:index, :show]
+  resources :offered_courses, only: [:index, :show, :create, :update] do
+    resource :expert, only: [:show]
   end
 
   get 'signup', to: 'newbies#new'
   #post 'signup', to: 'newbies#create'
-  resources :newbies, except: [:new, :index]
-  
+  resources :newbies, except: [:index]
+
 end
