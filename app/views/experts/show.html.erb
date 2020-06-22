@@ -1,3 +1,3 @@
 <h1><%= @expert.full_name %></h1>
 <p><%= @expert.bio %></p>
-<h3><%= @expert.first_name %>'s Courses</h3>
+<h3><%= link_to "See #{@expert.first_name}'s Courses", expert_offered_courses_path(@expert) %></h3>

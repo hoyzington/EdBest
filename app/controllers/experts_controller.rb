@@ -46,8 +46,14 @@ class ExpertsController < ApplicationController
 
   private
 
+  def course
+    if params[:offered_course_id]
+      OfferedCourse.find(params[:offered_course_id])
+    end
+  end
+
   def set_expert
-    @expert = Expert.find(params[:id])
+    @expert = Expert.find(params[:id] || course.expert.id)
   end
 
   def expert_params

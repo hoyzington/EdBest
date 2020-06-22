@@ -1,2 +1,4 @@
-<h1>OfferedCourses#index</h1>
-<p>Find me in app/views/offered_courses/index.html.erb</p>
+<h1>Check Out Our Awesome Courses!</h1>
+<% @o_courses.each do |course| %>
+  <h2><%= link_to course.name, course %></h2>
+<% end %>

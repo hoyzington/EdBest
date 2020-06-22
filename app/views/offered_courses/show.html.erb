@@ -1,2 +1,3 @@
-<h1>OfferedCourses#show</h1>
-<p>Find me in app/views/offered_courses/show.html.erb</p>
+<h1><%= @o_course.name %></h1>
+<h3><%= link_to @o_course.expert.full_name, [@o_course, @o_course.expert] %></h3>
+<p><%= @o_course.description %></p>
